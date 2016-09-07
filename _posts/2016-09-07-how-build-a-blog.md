@@ -1,13 +1,11 @@
 ---
 layout: post
-title: 如何正确地练习写作
+title: 如何创建自己的专属域名blog
 date: 2016-9-7 
 categories: blog
 tags: [创建博客,教程]
 description: 如何创建自己的专属域名blog
 ---
-
-## 
 
 # 如何创建自己的blog（基于Windows)
 
@@ -34,4 +32,3 @@ description: 如何创建自己的专属域名blog
 
 
 []()
-
