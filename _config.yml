@@ -1,14 +1,14 @@
 # Site settings
-title: JackieMing的blog
+title: Jackie Ming的blog
 header-img: "img/green.jpg"
 tagline: "cn"  
-description: "刘亦明|JackieMing"  
+description: "刘亦明|Jackie Ming"  
 baseurl: ""
 url: "http://jackieming.com"  
 
 # About/contact
 owner: 
-  name: "JackieMing"
+  name: "Jackie Ming"
   email: JackieMing97@gmail.com
   bio: "无趣的人"
 
@@ -43,7 +43,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "CnFeat"
+      author: "Jackie Ming"
       header-img: "img/green.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
