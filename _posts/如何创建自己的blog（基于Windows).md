@@ -1,3 +1,14 @@
+---
+layout: post
+title: 如何正确地练习写作
+date: 2016-9-7 
+categories: blog
+tags: [创建博客,教程]
+description: 如何创建自己的专属域名blog
+---
+
+## 
+
 # 如何创建自己的blog（基于Windows)
 
 [如何搭建一个独立博客](http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/)
@@ -18,11 +29,9 @@
   
 - [Dnspod](www.dnspod.cn/)
   
-  > 免费	  
+  > 免费
 
 
 
 []()
-
-
 
