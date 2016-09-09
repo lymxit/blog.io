@@ -1,5 +1,6 @@
 # Site settings
 title: 写字的地方
+SEOTitle: Jackie Ming 
 header-img: "img/semantic.jpg"
 tagline: "cn"  
 description: "刘亦明|Jackie Ming"  
@@ -29,7 +30,7 @@ zhihu_username: liu-yi-ming-50-91
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
-paginate: 8
+paginate: 8     
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -55,6 +56,8 @@ comments :
       short_name : 
 
 # Analytics and webmaster tools stuff goes here
+# Baidu Analytics
+ba_track_id: 6f7e2a4e32ac0acb2f811a100e3adb90
 google_analytics: 
 google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
