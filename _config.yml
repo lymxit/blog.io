@@ -56,10 +56,8 @@ comments :
       short_name : 
 
 # Analytics and webmaster tools stuff goes here
-# Baidu Analytics
-ba_track_id: 6f7e2a4e32ac0acb2f811a100e3adb90
-google_analytics: 
-google_verify:
+google_analytics: 'UA-83856595-1'
+google_verify: jackieming.com
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
 
