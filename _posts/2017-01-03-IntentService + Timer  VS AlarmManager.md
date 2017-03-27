@@ -3,7 +3,7 @@ layout: post
 title: IntentService + Timer  VS AlarmManager
 date: 2017-01-03
 categories: blog
-tags: [编程][Android]
+tags: [编程]
 description: 无
 ---
 
