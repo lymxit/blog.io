@@ -213,6 +213,8 @@ public void analyze(HeapDump heapDump) {
 
 这个`AndroidWatchExecutor`会在主线程空闲的时候往自己的后台线程去调度Runnable，这个过程有点复杂而且显得有些奇怪，但我们能知道所有的`ensureGone()`都是通过**一个后台线程**去完成的。
 
+之所以要统一在主线程空闲时，我猜想是因为会调用GC，但是GC有个特点就是STOP THE WORLD，那么这样很容易造成卡顿（用户体验差），所以要等主线程空闲。
+
 ![mark](http://oicc5e0b7.bkt.clouddn.com/blog/20170407/010211320.png)
 
 那又是什么时候去调用`ensureGoneAsync()`呢？这就来到了重点，`RefWatcher#watch()`：

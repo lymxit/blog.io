@@ -18,6 +18,8 @@ ListView一共有两种缓存：
 
 当你的列表在滑动的时候，离屏的Item会被回收到缓存中，即将入屏的Item则会优先从缓存中去取。
 
+但是ListView是有viewType的概念的，也就是说，如果viewType不一样，会放到不一样的缓存中。
+
 这样设计的优点在于：因为你屏幕的大小是固定的，那么**一般来说**用户看到的Item数量是固定的（考虑到可能出现最上面的Item出现一半，最下面的Item出现一半），那么Adapter只需要生成固定数量个View，然后不断去替换刷新这些View的数据就可以了。
 
 ![img](https://i.stack.imgur.com/VLG9g.jpg)
@@ -117,5 +119,34 @@ RecyclerView 一共有四种缓存：
 ### 结论
 
 在数据不会频繁变动的情况下，ListView和RecyclerView的性能差异并不明显，而RecyclerView的优势在于配置的多可选择性（Item分隔，layoutManager），且动画效果更佳。
+
+ListView原生是不支持局部刷新的，而RecyclerView支持。
+
+但也可以自己去写个局部刷新（单个），范围刷新可以类似：
+
+```java
+private void updateItem(int index) {
+    int visiblePosition = listView.getFirstVisiblePosition();
+    if (index - visiblePosition >= 0) {
+        //得到要更新的item的view
+        View view = listView.getChildAt(index - visiblePosition);
+        // 更新界面（示例参考）
+        // TextView nameView = ViewLess.$(view, R.id.name);
+        // nameView.setText("update " + index);
+        // 更新列表数据（示例参考）
+        // list.get(index).setName("Update " + index);
+    }
+}
+```
+
+还有要注意的是关于Item的点击方法，ListView是提供了Item的点击方法的，但是RecyclerView时没有提供这个方法：  [知乎讨论](https://www.zhihu.com/question/30336190)。
+
+大概原因就是因为Rv引入了动画，而且可能在布局时会出现几个Item重叠的情况。
+
+但是在RecyclerView中你可以在ViewHolder创建时去为每个子View去绑定点击方法。
+
+如果要解决的话也有方法 [RecyclerView onClick](http://stackoverflow.com/questions/24471109/recyclerview-onclick/26196831#26196831)
+
+大概思路就是实现`RecyclerView$OnItemTouchListener()`，然后在拦截方法`onInterceptTouchEvent()`中先获取被点击的Item，然后通过`GestureDetector`去监听点击和长点击事件。
 
 ### RecyclerView解析：[解析](https://blog.saymagic.tech/2016/10/21/understand-recycler.html)
