@@ -17,7 +17,7 @@ description: 无
 UserService service = retrofit.create(UserService.class);
 service.getUser(userId)
     .observeOn(AndroidSchedulers.mainThread())  //在主线程回调
-    .subscribe(new Consumer<User>() {
+    .subscribe(new Action1<User>() {
         @Override
         public void onNext(User user) {     //省略error handing
             userView.setUser(user);    //设置用户信息
