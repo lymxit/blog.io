@@ -97,6 +97,10 @@ public View getView(int position, View convertView, ViewGroup parent) {
 
 #### 优化ListView:[流畅滑动](https://developer.android.com/training/improving-layouts/smooth-scrolling.html)
 
+在`getView()`中不要做任何耗时操作，而且需要使用ViewHolder。
+
+如果只是局部更新，不要傻乎乎的直接adapter全部刷新，可以自己去写局部刷新的操作。
+
 > 流畅滑动的关键之处就在于不要在主线程中做复杂操作。这些复杂操作包括：I/O，网络交互，数据库查询。
 
 在用户滚动列表的时候并不要去加载图片，可以当用户停止滚动列表的时候才去加载图片。
