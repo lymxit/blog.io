@@ -13,6 +13,8 @@ description: 无
 >
 > a hand-written counted loop is better than for the enhanced loop. -- jackiemliu
 
+**本文仅限于 ArrayList，LinkedList 不在讨论话题内。**
+
 首先，相信大家对于这两种循环都很熟悉：
 
 ```java
